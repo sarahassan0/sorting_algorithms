@@ -1,10 +1,8 @@
 #ifndef SORT_H
 #define SORT_H
 
-#include <string.h>
-#include <stdio.h>
-#include <stdbool.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * struct listint_s - Doubly linked list node
