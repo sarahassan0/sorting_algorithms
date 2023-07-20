@@ -24,6 +24,6 @@ void print_array(const int *array, size_t size);
 void bubble_sort(int *array, size_t size);
 void swap(int *array, size_t a, size_t b);
 void cocktail_sort_list(listint_t **list);
-
+void swap(int *x, int *y);
 
 #endif
