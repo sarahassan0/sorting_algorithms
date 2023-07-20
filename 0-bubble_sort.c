@@ -28,3 +28,16 @@ void bubble_sort(int *array, size_t size)
 			break;
 	}
 }
+
+/**
+ * swap - Swaps the values of two integers using pointers.
+ * @x: Pointer to the first integer.
+ * @y: Pointer to the second integer.
+ */
+void swap(int *x, int *y)
+{
+	int tmp = *x;
+
+	*x = *y;
+	*y = tmp;
+}
