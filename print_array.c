@@ -28,10 +28,3 @@ void print_array(const int *array, size_t size)
  * @a: first index
  * @b: second index
  */
-void swap(int *array, size_t a, size_t b)
-{
-	int temp = array[a];
-
-	array[a] = array[b];
-	array[b] = temp;
-}
