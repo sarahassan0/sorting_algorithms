@@ -23,9 +23,8 @@ void print_array(const int *array, size_t size)
 }
 /**
  * swap - swap 2 elements in the array
- * @array: the array
- * @a: first index
- * @b: second index
+ * @x: first index
+ * @y: second index
  */
 void swap(int *x, int *y)
 {
