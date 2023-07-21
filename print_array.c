@@ -21,15 +21,3 @@ void print_array(const int *array, size_t size)
 	}
 	printf("\n");
 }
-/**
- * swap - swap 2 elements in the array
- * @x: first index
- * @y: second index
- */
-void swap(int *x, int *y)
-{
-	int tmp = *x;
-
-	*x = *y;
-	*y = tmp;
-}
