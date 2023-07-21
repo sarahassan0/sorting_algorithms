@@ -21,10 +21,16 @@ void print_array(const int *array, size_t size)
 	}
 	printf("\n");
 }
-#include "sort.h"
 /**
  * swap - swap 2 elements in the array
  * @array: the array
  * @a: first index
  * @b: second index
  */
+void swap(int *x, int *y)
+{
+	int tmp = *x;
+
+	*x = *y;
+	*y = tmp;
+}
