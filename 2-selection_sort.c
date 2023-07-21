@@ -7,23 +7,27 @@
  */
 void selection_sort(int *array, size_t size)
 {
-    size_t i, j;
+	size_t i, j;
 
-    for (i = 0; i < size - 1; i++)
-    {
-        size_t min = i;
+	/*
+	 * (size - 1) because the last ele will be sorted within
+	 *	the inner loop so no need to resort it
+	 */
+	for (i = 0; i < size - 1; i++)
+	{
+		size_t min = i;
 
-        for (j = i + 1; j < size; j++)
-        {
-            if (array[min] > array[j])
-                min = j;
-        }
-        if (min != i)
-        {
-            swap(&array[min], &array[i]);
-            print_array(array, size);
-        }
-    }
+		for (j = i + 1; j < size; j++)
+		{
+			if (array[min] > array[j])
+				min = j;
+		}
+		if (min != i)
+		{
+			swap(&array[min], &array[i]);
+			print_array(array, size);
+		}
+	}
 }
 
 /**
@@ -33,8 +37,8 @@ void selection_sort(int *array, size_t size)
  */
 void swap(int *x, int *y)
 {
-    int tmp = *x;
+	int tmp = *x;
 
-    *x = *y;
-    *y = tmp;
+	*x = *y;
+	*y = tmp;
 }
