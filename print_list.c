@@ -21,12 +21,3 @@ void print_list(const listint_t *list)
 	}
 	printf("\n");
 }
-/**
- * swapl - swap 2 nodes of the doubley linked list
- * @n1: pointer to the first node
- * @n2: pointer to the second node
- */
-void swapl(listint_t *n1, listint_t *n2)
-{
-
-}
