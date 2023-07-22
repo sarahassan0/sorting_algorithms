@@ -2,22 +2,22 @@
 
 /**
  * insertion_sort_list - insertion sort algorithm
- * @listint_t: list that will be sorted
+ * @list: list that will be sorted
  */
 void insertion_sort_list(listint_t **list)
 {
-    listint_t *i = (*list)->next;
-    listint_t *j;
-    while (i != NULL)
-    {
-        j = i;
-        while (j->prev != NULL && j->n < j->prev->n)
-        {
-            swap_list(list, j, j->prev);
-            print_list(*list);
-        }
-        i = i->next;
-    }
+	listint_t *i = (*list)->next;
+	listint_t *j;
+	while (i != NULL)
+	{
+		j = i;
+		while (j->prev != NULL && j->n < j->prev->n)
+		{
+			swap_list(list, j, j->prev);
+			print_list(*list);
+		}
+		i = i->next;
+	}
 }
 
 /**
