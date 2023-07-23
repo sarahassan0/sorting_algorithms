@@ -8,6 +8,8 @@ void shell_sort(int *array, size_t size)
 {
 	size_t i, j, gap = 1;
 
+	if (size < 2)
+		return;
 	while (gap * 3 + 1 < size)
 	{
 		gap  = gap * 3 + 1;
@@ -17,7 +19,7 @@ void shell_sort(int *array, size_t size)
 		for (i = gap; i < size; i++)
 		{
 			j = i;
-			while (j > 0 && array[j] <= array[j - gap])
+			while (j > 0 && array[j] < array[j - gap])
 			{
 				swap(&array[j], &array[j - gap]);
 				j-=gap;
