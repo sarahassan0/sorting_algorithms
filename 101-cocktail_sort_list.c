@@ -6,11 +6,13 @@
 void cocktail_sort_list(listint_t **list)
 {
 	listint_t *j, *k, *i = *list;
+	int sorted;
 
-	if (!list)
+	if (!list || !*list)
 		return;
 	for (; i; i = i->next)
 	{
+		sorted = 1;
 		j = *list;
 		for (; j->next;)
 		{
@@ -18,8 +20,11 @@ void cocktail_sort_list(listint_t **list)
 			{
 				swap_list(list, j, j->next);
 				print_list(*list);
+				sorted = 0;
 				continue;
 			}
+			if (sorted)
+				return;
 			j = j->next;
 		}
 		for (k = j; k->prev ;)
