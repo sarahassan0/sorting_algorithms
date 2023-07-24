@@ -31,7 +31,7 @@ void counting_sort(int *array, size_t size)
  * max - get the max elementthe array
  * @array: array to get the max
  * @size: size of the array
- * Retuen: return max of the array
+ * Return: return max of the array
  */
 size_t max(int *array, size_t size)
 {
