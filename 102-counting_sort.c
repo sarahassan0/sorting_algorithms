@@ -14,9 +14,14 @@ void counting_sort(int *array, size_t size)
 	if (!array || size < 2)
 		return;
 	sorted = malloc(sizeof(int) * size);
-	freq = malloc((freq_len + 1) * sizeof(int));
-	if (!sorted || !freq)
+	if(!sorted)
 		return;
+	freq = malloc((freq_len + 1) * sizeof(int));
+	if(!freq)
+	{
+		free(sorted);
+		return;
+	}
 	for (i = 0; i < size; i++)
 		freq[array[i]] += 1;
 	for (i = 1; i <= freq_len; i++)
@@ -33,7 +38,7 @@ void counting_sort(int *array, size_t size)
  * max - get the max elementthe array
  * @array: array to get the max
  * @size: size of the array
- * Retuen: return max of the array
+ * Return: return max of the array
  */
 size_t max(int *array, size_t size)
 {
