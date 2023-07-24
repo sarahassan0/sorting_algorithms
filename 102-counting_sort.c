@@ -13,7 +13,7 @@ void counting_sort(int *array, size_t size)
 
        	sorted = malloc(sizeof(int) * size);
        	freq = malloc((freq_len + 1) * sizeof(int));
-	if (!sorted || !freq || !array)
+	if (!sorted || !freq || !array || size < 2)
 		return;
 	for (i = 0; i <= freq_len; i++)
 		freq[i] = 0;
