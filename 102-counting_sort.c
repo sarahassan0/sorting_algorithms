@@ -11,9 +11,11 @@ void counting_sort(int *array, size_t size)
 	int *sorted;
 	int *freq;
 
+	if (!array || size < 2)
+		return;
 	sorted = malloc(sizeof(int) * size);
 	freq = malloc((freq_len + 1) * sizeof(int));
-	if (!sorted || !freq || !array || size < 2)
+	if (!sorted || !freq)
 		return;
 	for (i = 0; i < size; i++)
 		freq[array[i]] += 1;
