@@ -14,10 +14,10 @@ void counting_sort(int *array, size_t size)
 	if (!array || size < 2)
 		return;
 	sorted = malloc(sizeof(int) * size);
-	if(!sorted)
+	if (!sorted)
 		return;
 	freq = malloc((freq_len + 1) * sizeof(int));
-	if(!freq)
+	if (!freq)
 	{
 		free(sorted);
 		return;
