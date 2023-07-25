@@ -5,7 +5,7 @@
  */
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *j, *k, *i ;
+	listint_t *j, *k, *i;
 
 	if (!list || !*list || !(*list)->next)
 		return;
