@@ -19,11 +19,13 @@ int partition(int *array, int low, int high, size_t size)
 		do
 		{
 			i++;
-		} while (array[i] < pivot);
+		}
+		while (array[i] < pivot);
 		do
 		{
 			j--;
-		} while (array[j] > pivot);
+		}
+		while (array[j] > pivot);
 		if (i > j)
 			return (j);
 		if (array[i] != array[j])
@@ -58,6 +60,8 @@ void quick_sort_helper(int *array, int low, int high, size_t size)
  */
 void quick_sort_hoare(int *array, size_t size)
 {
+	if (!array || size < 2)
+		return;
 	quick_sort_helper(array, 0, size - 1, size);
 }
 
