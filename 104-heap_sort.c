@@ -1,5 +1,26 @@
 #include "sort.h"
+/**
+ * heapify - make max element at the 0 index
+ * @array - array
+ * @size: size the array
+ * @last_index - last unsorted index
+ * @i: root index
+ */
+void heapify(int *array, size_t size, size_t last_index, size_t i)
+{
+	size_t max = i, left = i * 2 + 1, right = i * 2 + 2;
 
+	if (left < last_index && array[left] > array[max])
+		max = left;
+	if (right < last_index && array[right] > array[max])
+		max = right;
+	if (i != max)
+	{
+		swap(&array[max], &array[i]);
+		print_array(array, size);
+		heapify(array, size, last_index, max);
+	}
+}
 /**
  * heap_sort - sorting heap
  * @array: array that will be sortd
@@ -11,15 +32,16 @@ void heap_sort(int *array, size_t size)
 
 	if (size < 2)
 		return;
-	for (i = size \ 2 - 1; i >= 0; i--)
+	for (i = size / 2 - 1; (int)i >= 0; i--)
 	{
-		heapefy(array, size, i);
+		heapify(array, size, size, i);
 	}
 
-	for (i = size - 1; i > 0; i--)
+	for (i = size - 1; (int)i > 0; i--)
 	{
-		swap(&arr[0], &arr[i]);
-		heapefy(array, size, 0);
+		swap(&array[0], &array[i]);
+		print_array(array, size);
+		heapify(array, size, i, 0);
 	}
 }
 
