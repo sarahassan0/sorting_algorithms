@@ -1,9 +1,9 @@
 #include "sort.h"
 /**
  * heapify - make max element at the 0 index
- * @array - array
+ * @array: array
  * @size: size the array
- * @last_index - last unsorted index
+ * @last_index: last unsorted index
  * @i: root index
  */
 void heapify(int *array, size_t size, size_t last_index, size_t i)
