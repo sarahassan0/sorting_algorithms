@@ -7,12 +7,14 @@ size_t max(int *array, size_t size);
  */
 void counting_sort(int *array, size_t size)
 {
-	size_t i, freq_len = max(array, size);
+	size_t i, freq_len;
 	int *sorted;
 	int *freq;
 
 	if (!array || size < 2)
 		return;
+	freq_len = max(array, size);
+
 	sorted = malloc(sizeof(int) * size);
 	if (!sorted)
 		return;
@@ -45,8 +47,7 @@ size_t max(int *array, size_t size)
 {
 	size_t i;
 	int max;
-
-	max = array[0];
+	max = 0;
 	for (i = 0; i < size; i++)
 		if (array[i] > max)
 			max = array[i];
