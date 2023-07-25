@@ -1,18 +1,18 @@
 #include "sort.h"
 
-void heapefy(int *array, size_t size, size_t i)
+void heapify(int *array, size_t size, size_t last_index, size_t i)
 {
 	size_t max = i, left = i * 2 + 1, right = i * 2 + 2;
 
-	if (left < size && array[left] > array[max])
+	if (left < last_index && array[left] > array[max])
 		max = left;
-	if (right < size && array[right] > array[max])
+	if (right < last_index && array[right] > array[max])
 		max = right;
 	if (i != max)
 	{
 		swap(&array[max], &array[i]);
 		print_array(array, size);
-		heapefy(array, size, max);
+		heapify(array, size, last_index, max);
 	}
 }
 /**
@@ -28,14 +28,14 @@ void heap_sort(int *array, size_t size)
 		return;
 	for (i = size / 2 - 1; (int)i >= 0; i--)
 	{
-		heapefy(array, size, i);
+		heapify(array, size, size, i);
 	}
 
 	for (i = size - 1; (int)i > 0; i--)
 	{
 		swap(&array[0], &array[i]);
 		print_array(array, size);
-		heapefy(array, size, 0);
+		heapify(array, size, i, 0);
 	}
 }
 
