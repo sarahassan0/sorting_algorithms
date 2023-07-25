@@ -1,5 +1,20 @@
 #include "sort.h"
 
+void heapefy(int *array, size_t size, size_t i)
+{
+	size_t max = i, left = i * 2 + 1, right = i * 2 + 2;
+
+	if (left < size && array[left] > array[max])
+		max = left;
+	if (right < size && array[right] > array[max])
+		max = right;
+	if (i != max)
+	{
+		swap(&array[max], &array[i]);
+		print_array(array, size);
+		heapefy(array, size, max);
+	}
+}
 /**
  * heap_sort - sorting heap
  * @array: array that will be sortd
@@ -11,14 +26,15 @@ void heap_sort(int *array, size_t size)
 
 	if (size < 2)
 		return;
-	for (i = size \ 2 - 1; i >= 0; i--)
+	for (i = size / 2 - 1; (int)i >= 0; i--)
 	{
 		heapefy(array, size, i);
 	}
 
-	for (i = size - 1; i > 0; i--)
+	for (i = size - 1; (int)i > 0; i--)
 	{
-		swap(&arr[0], &arr[i]);
+		swap(&array[0], &array[i]);
+		print_array(array, size);
 		heapefy(array, size, 0);
 	}
 }
