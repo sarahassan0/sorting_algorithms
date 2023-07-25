@@ -7,7 +7,7 @@ void cocktail_sort_list(listint_t **list)
 {
 	listint_t *j, *k, *i = *list;
 
-	if (!list)
+	if (!list || !*list || !(*list)->next)
 		return;
 	for (; i; i = i->next)
 	{
