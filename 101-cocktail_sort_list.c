@@ -12,7 +12,7 @@ void cocktail_sort_list(listint_t **list)
 	i = *list;
 	for (; i; i = i->next)
 	{
-		j = i->prev;
+		j = *list;
 		for (; j->next; )
 		{
 			if (j->n > j->next->n)
