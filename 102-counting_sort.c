@@ -22,6 +22,8 @@ void counting_sort(int *array, size_t size)
 		free(sorted);
 		return;
 	}
+	for (i = 0; i <= freq_len; i++)
+		freq[i] = 0;
 	for (i = 0; i < size; i++)
 		freq[array[i]] += 1;
 	for (i = 1; i <= freq_len; i++)
