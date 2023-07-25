@@ -5,10 +5,11 @@
  */
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *j, *k, *i = *list;
+	listint_t *j, *k, *i ;
 
 	if (!list || !*list || !(*list)->next)
 		return;
+	i = *list;
 	for (; i; i = i->next)
 	{
 		j = *list;
