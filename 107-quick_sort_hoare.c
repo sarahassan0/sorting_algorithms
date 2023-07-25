@@ -21,7 +21,8 @@ int partition(int *array, int low, int high, size_t size)
 		} while (array[i] < pivot);
 		do {
 			j--;
-		} while (array[j] > pivot);
+		}
+		while (array[j] > pivot);
 		if (i > j)
 			return (j);
 		if (array[i] != array[j])
