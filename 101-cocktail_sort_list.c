@@ -43,29 +43,18 @@ void cocktail_sort_list(listint_t **list)
  */
 void swap_list(listint_t **list, listint_t *x, listint_t *y)
 {
-        y->prev = x->prev;
-        if (!y->next)
-            x->next = NULL;
-        else
+	y->prev = x->prev;
+	if (!y->next)
+		x->next = NULL;
+	else
 	{
-            x->next = y->next;
-            y->next->prev = x;
-	}
-        x->prev = y;
-        y->next = x;
-        if (!y->prev)
-                *list = y;
-        else
-                y->prev->next = y;
-
-/*	y->prev = x->prev;
-	x->next = y->next;
-	if (y->next)
+		x->next = y->next;
 		y->next->prev = x;
+	}
 	x->prev = y;
 	y->next = x;
 	if (!y->prev)
 		*list = y;
 	else
-		y->prev->next = y;*/
+		y->prev->next = y;
 }
